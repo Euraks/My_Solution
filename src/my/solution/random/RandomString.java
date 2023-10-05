@@ -10,15 +10,13 @@ public class RandomString {
     private static final String ALPHABET = "abcdefghijklmnopqrstuvwxyz";
     private static final Random RANDOM = new Random();
 
-    private static final List<String> stringList = new LinkedList<>();
-
-    public static void main(String[] args) {
-        for (int i = 0 ; i<10;i++){
+    public List<String> getStringList( int quantity){
+        List<String> stringList = new LinkedList<>();
+        for (int i = 0 ; i<quantity;i++){
             int length = ThreadLocalRandom.current().nextInt(0,12);
             stringList.add( getRandomWord(length) );
         }
-
-        System.out.println(stringList);
+        return stringList;
     }
 
     private static   String getRandomWord(int length) {
